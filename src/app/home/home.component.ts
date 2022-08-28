@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private _liveAnnouncer: LiveAnnouncer,
     private _service: ServiceAPIService,
-    private readonly router: Router
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -32,9 +32,7 @@ export class HomeComponent implements OnInit {
         this.dataSource = new MatTableDataSource<Subscriber>(this.dataSubscribers);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
-      }, error => {
-        this.router.navigate([`/login`]);
-      }
+      }, error => this.router.navigate([`/login`])
     );
   }
 
@@ -47,7 +45,7 @@ export class HomeComponent implements OnInit {
     }
   }
   redirectSubscriber(row: any) {
-    this.router.navigate([`/subscriber/${row.Id}`]);
+    this.router.navigate([`/subscriberContent/${row.Id}`]);
   }
 
 }

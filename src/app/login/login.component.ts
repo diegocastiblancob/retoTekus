@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ServiceAPIService } from '../shared/services/service-api.service';
@@ -17,7 +17,7 @@ export class LoginComponent {
   constructor(
     private formBuilder: FormBuilder,
     private _serviceAuth: ServiceAPIService,
-    private readonly router: Router
+    private router: Router
   ) {
     this.formLogin = this.formBuilder.group({
       username: new FormControl(''),
@@ -33,9 +33,7 @@ export class LoginComponent {
           localStorage.setItem('datauser', btoa(JSON.stringify(response)));
           localStorage.setItem('datauserDecript', JSON.stringify(response));
           this.router.navigate(['/']);
-        }, error => {
-          this.errorMessage = '¡Usuario o contraseña invalido!';
-        }
+        }, error => this.errorMessage = '¡Usuario o contraseña invalido!'
       );
     }
   }

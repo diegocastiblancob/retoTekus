@@ -1,1 +1,8 @@
-<p>header works!</p>
+<div class="container">
+    <button mat-button [matMenuTriggerFor]="animals">MENÚ</button>
+    <mat-menu #animals="matMenu">
+      <button mat-menu-item (click)="redirect('/')">Inicio</button>
+      <button mat-menu-item (click)="redirect('/subscriber')">Crear subscriptor</button>
+      <button mat-menu-item (click)="redirect('/login')">Cerrar sesión</button>
+    </mat-menu>
+</div>

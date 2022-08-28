@@ -16,8 +16,12 @@ const routes: Routes = [
         loadChildren: () => import('./home/home.module').then(module => module.HomeModule)
       },
       {
+        path: 'subscriberContent',
+        loadChildren: () => import('./subscriberContent/subscriber.module').then(module => module.SubscriberModule)
+      },
+      {
         path: 'subscriber',
-        loadChildren: () => import('./subscriber/subscriber-routing.module').then(module => module.SubscriberRoutingModule)
+        loadChildren: () => import('./subscriber/subscriber.module').then(module => module.SubscriberModule)
       }
     ]
   }

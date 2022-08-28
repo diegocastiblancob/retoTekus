@@ -11,22 +11,21 @@ import { AuthInterceptorService } from './shared/interceptor/auth-interceptor.se
 import { LayoutComponent } from './layout/layout.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
-import { SubscriberComponent } from './subscriber/subscriber.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     HeaderComponent,
-    FooterComponent,
-    SubscriberComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    
+    MatMenuModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: "es-ES" }, //Format configuration in es-ES

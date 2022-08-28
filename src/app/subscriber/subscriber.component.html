@@ -1,1 +1,75 @@
-<p>subscriber works!</p>
+<mat-card>
+    <mat-card-title>{{title}}</mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="formSubscriber" (ngSubmit)="submit()">
+            <p>
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Nombre" formControlName="Name">
+                </mat-form-field>
+            </p>
+
+            <p>
+                <mat-form-field>
+                    <input type="email" matInput placeholder="Correo" formControlName="Email">
+                </mat-form-field>
+            </p>
+
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Código de país</mat-label>
+                    <mat-select disableRipple formControlName="PhoneCode">
+                        <mat-option value=""></mat-option>
+                        <mat-option *ngFor="let country of countries" [value]="country.Code">{{country.Code}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </p>
+
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>País</mat-label>
+                    <mat-select disableRipple formControlName="CountryName">
+                        <mat-option value=""></mat-option>
+                        <mat-option *ngFor="let country of countries" [value]="country.Name">{{country.Name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </p>
+
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Indicativo</mat-label>
+                    <mat-select disableRipple formControlName="PhoneCode">
+                        <mat-option value=""></mat-option>
+                        <mat-option *ngFor="let country of countries" [value]="country.PhoneCode">{{country.PhoneCode}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </p>
+
+            <p>
+                <mat-form-field>
+                    <input type="number" matInput placeholder="Teléfono" formControlName="PhoneNumber">
+                </mat-form-field>
+            </p>
+
+            <p>
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Rol de trabajo" formControlName="JobTitle">
+                </mat-form-field>
+            </p>
+
+            <p>
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Area" formControlName="Area">
+                </mat-form-field>
+            </p>
+
+            <p *ngIf="submitted && errorMessage" class="error">
+                {{ errorMessage }}
+            </p>
+
+            <div class="button">
+                <button type="submit" mat-button>Guardar</button>
+            </div>
+
+        </form>
+    </mat-card-content>
+</mat-card>

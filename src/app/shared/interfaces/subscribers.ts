@@ -4,10 +4,16 @@ export interface Subscribers {
 }
 
 export interface Subscriber {
-    PublicId: string;
-    Area: string;
+    PublicId?: string;
+    Area?: string;
     Name: string;
-    Email: string;
-    PhoneCodeAndNumber: string;
-    CountryName: string;
+    Email?: string;
+    PhoneCodeAndNumber?: string;
+    CountryName?: string;
+    JobTitle?: string;
+    SubscriptionStateDescription?: string;
+    CountryCode?: string;
+    PhoneCode?: string;
+    PhoneNumber?: string;
+    Topics?: any[];
 }

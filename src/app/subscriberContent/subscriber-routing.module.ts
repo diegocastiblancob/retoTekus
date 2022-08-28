@@ -4,7 +4,7 @@ import { SubscriberComponent } from './subscriber.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: ':id',
     component: SubscriberComponent
   }
 ];
