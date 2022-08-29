@@ -34,7 +34,7 @@ export class SubscriberComponent implements OnInit {
       PhoneNumber: new FormControl(''),
       JobTitle: new FormControl(''),
       Area: new FormControl(''),
-      Topics: new FormControl('')
+      Topics: new FormControl([])
     });
   }
 
